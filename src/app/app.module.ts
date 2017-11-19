@@ -1,16 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { SelectLanguageDropdownComponent } from './select-language-dropdown/select-language-dropdown.component';
+
+import { LanguagesService } from './languages.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchBarComponent,
+    SelectLanguageDropdownComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [LanguagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
