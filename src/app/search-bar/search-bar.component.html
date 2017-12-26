@@ -1,5 +1,6 @@
 <div>
   <app-select-language-dropdown></app-select-language-dropdown>
-  <input type="text" name="search" [value]="phrase" (input)="phrase = $event.target.value" placeholder="Search word/phrase">
+  <input type="text" name="search" placeholder="Search word/phrase" />
+  <!-- <input type="text" name="search" [value]="phrase" (input)="phrase = $event.target.value" placeholder="Search word/phrase" /> -->
   <button (click)="searchPhrase($event)" class="btn btn-xs btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button> 
 </div>

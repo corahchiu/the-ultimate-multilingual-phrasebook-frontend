@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SelectLanguageDropdownComponent } from './select-language-dropdown/select-language-dropdown.component';
 
-import { LanguagesService } from './languages.service';
+import { LanguagesService } from './_services/languages.service';
 
 @NgModule({
   declarations: [

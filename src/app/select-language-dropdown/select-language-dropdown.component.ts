@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LanguagesService } from '../languages.service';
+import { LanguagesService } from '../_services/languages.service';
 
 @Component({
   selector: 'app-select-language-dropdown',
