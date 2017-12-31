@@ -9,8 +9,8 @@ import { SelectLanguageDropdownComponent } from './shared-components/select-lang
 import { LanguagesService } from './_services/languages.service';
 import { PhrasebookComponent } from './router-components/phrasebook/phrasebook.component';
 import { TableComponent } from './router-components/phrasebook/table/table.component';
-import { MainColumnComponent } from './router-components/phrasebook/table/main-column/main-column.component';
-import { TargetColumnComponent } from './router-components/phrasebook/table/target-column/target-column.component';
+import { MainRowComponent } from './router-components/phrasebook/table/main-row/main-row.component';
+import { TargetRowComponent } from './router-components/phrasebook/table/target-row/target-row.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { TargetColumnComponent } from './router-components/phrasebook/table/targ
     SelectLanguageDropdownComponent,
     PhrasebookComponent,
     TableComponent,
-    MainColumnComponent,
-    TargetColumnComponent
+    MainRowComponent,
+    TargetRowComponent
   ],
   imports: [
     BrowserModule,

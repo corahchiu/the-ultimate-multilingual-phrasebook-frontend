@@ -26,7 +26,7 @@ export class TargetRowComponent implements OnInit {
       }
     }
 
-    moveRowDown(row): void {
+    moveRowUp(row): void {
       const i: number = this.targetRows.indexOf(row);
       if (i > 0) {
         this.targetRows[i] = this.targetRows[i - 1];
@@ -34,7 +34,7 @@ export class TargetRowComponent implements OnInit {
        }
     }
 
-    moveRowUp(row): void {
+    moveRowDown(row): void {
       const i: number = this.targetRows.indexOf(row);
       if (i < this.targetRows.length - 1) {
         this.targetRows[i] = this.targetRows[i + 1];
