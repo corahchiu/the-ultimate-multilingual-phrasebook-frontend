@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./target-row.component.css']
 })
 export class TargetRowComponent implements OnInit {
+
+  // targetRows: any;
+  // targetRow: any;
+
+  // constructor() {
+  //   this.targetRows = [];
+  //   this.targetRows.push(this.targetRow);
+  //   this.targetRows.push(this.targetRow);
+  // }
   targetRows: Array<TargetRow> = [];
 
     constructor() {
@@ -17,6 +26,8 @@ export class TargetRowComponent implements OnInit {
     }
 
     addNewRow(): void {
+      // this.targetRow = '';
+      // this.targetRows.push(this.targetRow);
       this.targetRows.push(new TargetRow(''));
     }
 
