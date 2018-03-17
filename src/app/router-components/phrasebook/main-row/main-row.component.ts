@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchPhraseService } from '../../../_services/search-phrase.service';
 
 @Component({
   selector: 'app-main-row',
@@ -11,22 +12,23 @@ export class MainRowComponent implements OnInit {
   searchedLanguage = '';
   searchedPhrase = '';
 
-  constructor() { }
+  constructor(private searchPhraseService: SearchPhraseService) { }
 
   ngOnInit() {
   }
 
   selectLanguage(language) {
-    console.log(language);
     this.language = language;
   }
 
   searchPhrase(phrase) {
     // 1. display this.language in main row
-    console.log(phrase);
     this.searchedLanguage = this.language;
-    this.searchedPhrase = phrase;
+    // TODO: add function to process single word (small letters only)/proper nouns
+    this.searchedPhrase = phrase.charAt(0).toUpperCase() + phrase.substr(1).toLowerCase();
     // 2. put this.searchedLanguage and this.searchedPhrase in object, and send to search-phrase.service
+    let obj = {phrase: this.searchedPhrase, language: this.searchedLanguage};
+    this.searchPhraseService.search(obj);
   }
 
 }
