@@ -8,29 +8,20 @@ import { SearchPhraseService } from '../../../_services/search-phrase.service';
 })
 export class TargetRowComponent implements OnInit {
 
-  phrases: any;
-  // targetRows: any;
-  // targetRow: any;
+  allPhrases: any;
 
-  // constructor() {
-  //   this.targetRows = [];
-  //   this.targetRows.push(this.targetRow);
-  //   this.targetRows.push(this.targetRow);
-  // }
   targetRows: Array<TargetRow> = [];
 
     constructor(private searchPhraseService: SearchPhraseService) {
       this.targetRows.push(new TargetRow(''));
       this.targetRows.push(new TargetRow(''));
-      this.searchPhraseService.targetPhrases.subscribe(phrases => this.phrases = phrases);
+      this.searchPhraseService.targetPhrases.subscribe(allPhrases => this.allPhrases = allPhrases);
      }
 
     ngOnInit() {
     }
 
     addNewRow(): void {
-      // this.targetRow = '';
-      // this.targetRows.push(this.targetRow);
       this.targetRows.push(new TargetRow(''));
     }
 
@@ -54,6 +45,10 @@ export class TargetRowComponent implements OnInit {
         this.targetRows[i] = this.targetRows[i + 1];
         this.targetRows[i + 1] = row;
        }
+    }
+
+    onLanguageSelect(targetRow, language) {
+      targetRow.language = language;
     }
   }
 

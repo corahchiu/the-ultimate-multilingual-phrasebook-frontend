@@ -1,13 +1,13 @@
 <table>
   <tr *ngFor="let targetRow of targetRows">
     <td>
-      <app-select-language-dropdown></app-select-language-dropdown>
+      <app-select-language-dropdown (change)="onLanguageSelect(targetRow, $event.target.value)"></app-select-language-dropdown>
       <br>
       <button (click)="moveRowUp(targetRow)" class="btn btn-xs btn-default"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
       <button (click)="moveRowDown(targetRow)" class="btn btn-xs btn-default"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>          
       <button (click)="removeRow(targetRow)" class="btn btn-xs"><i class="fa fa-times" aria-hidden="true"></i></button>
     </td>
-    <td>ng for each phrase</td> 
+    <td>{{allPhrases[targetRow.language]}}</td> 
 </table>
 
 <div>
