@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchPhraseService } from '../../../_services/search-phrase.service';
 
 @Component({
   selector: 'app-target-row',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TargetRowComponent implements OnInit {
 
+  phrases: any;
   // targetRows: any;
   // targetRow: any;
 
@@ -17,9 +19,10 @@ export class TargetRowComponent implements OnInit {
   // }
   targetRows: Array<TargetRow> = [];
 
-    constructor() {
+    constructor(private searchPhraseService: SearchPhraseService) {
       this.targetRows.push(new TargetRow(''));
       this.targetRows.push(new TargetRow(''));
+      this.searchPhraseService.targetPhrases.subscribe(phrases => this.phrases = phrases);
      }
 
     ngOnInit() {

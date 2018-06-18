@@ -27,7 +27,7 @@ export class MainRowComponent implements OnInit {
     // TODO: add function to process single word (small letters only)/proper nouns
     this.searchedPhrase = phrase.charAt(0).toUpperCase() + phrase.substr(1).toLowerCase();
     // 2. put this.searchedLanguage and this.searchedPhrase in object, and send to search-phrase.service
-    let obj = {phrase: this.searchedPhrase, language: this.searchedLanguage};
+    const obj = {phrase: this.searchedPhrase, language: this.searchedLanguage};
     this.searchPhraseService.search(obj);
   }
 
