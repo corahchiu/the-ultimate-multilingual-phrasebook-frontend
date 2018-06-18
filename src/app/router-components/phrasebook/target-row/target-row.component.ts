@@ -13,8 +13,8 @@ export class TargetRowComponent implements OnInit {
   targetRows: Array<TargetRow> = [];
 
     constructor(private searchPhraseService: SearchPhraseService) {
-      this.targetRows.push(new TargetRow(''));
-      this.targetRows.push(new TargetRow(''));
+      this.targetRows.push(new TargetRow());
+      this.targetRows.push(new TargetRow());
       this.searchPhraseService.targetPhrases.subscribe(allPhrases => this.allPhrases = allPhrases);
      }
 
@@ -22,7 +22,7 @@ export class TargetRowComponent implements OnInit {
     }
 
     addNewRow(): void {
-      this.targetRows.push(new TargetRow(''));
+      this.targetRows.push(new TargetRow());
     }
 
     removeRow(row): void {
@@ -53,7 +53,7 @@ export class TargetRowComponent implements OnInit {
   }
 
   export class TargetRow {
-    constructor(public language: string) {
+    constructor() {
     }
   }
 
